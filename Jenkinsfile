@@ -18,7 +18,7 @@ pipeline{
         stage ("push image to docker hub")
         {
             steps{
-                withCredentials([string(credentialsId: 'DockerPasswd', variable: 'DockerPasswd')]) {
+                withCredentials([string(credentialsId: 'DockerPasswdd', variable: 'DockerPasswdd')]) {
                 sh "docker login -u yakhub4881 -p ${DockerPasswd}"
                 sh 'docker tag myimage:v1.$BUILD_ID yakhub4881/myimage:v1.$BUILD_ID'
                 sh 'docker tag myimage:v1.$BUILD_ID yakhub4881/myimage:latest'
