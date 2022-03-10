@@ -6,7 +6,7 @@ pipeline{
         {
             steps
             {
-                checkout([$class: 'GitSCM', branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/yakhub4881/deploy-container-webserver.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/yakhub4881/deploy-container-webserver.git']]])
             }
         }
         stage ("build docker image")
